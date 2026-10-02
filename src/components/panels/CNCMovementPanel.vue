@@ -203,10 +203,10 @@ export default Vue.extend({
 	methods: {
 		getMoveCellClass(index: number) {
 			let classes = "";
-			if (index === 0 || index === 5) {
+			if (index === 0) {
 				classes += "hidden-lg-and-down";
 			}
-			if (index > 1 && index < 4 && index % 2 === 1) {
+			if (index === 1) {
 				classes += "hidden-md-and-down";
 			}
 			return classes;
