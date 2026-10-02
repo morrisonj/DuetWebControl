@@ -102,7 +102,7 @@
 				<!-- Decreasing movements -->
 				<v-col>
 					<v-row no-gutters>
-						<v-col v-for="index in numMoveSteps" :key="index" :class="getMoveCellClass(index - 1)">
+						<v-col v-for="index in numMoveSteps" :key="index" cols="6" md :class="getMoveCellClass(index - 1)">
 							<code-btn :code="getMoveCode(axis, index - 1, true)" :disabled="!canMove(axis)" no-wait
 									  @contextmenu.prevent="showMoveStepDialog(axis.letter, index - 1)" block tile
 									  class="move-btn">
@@ -116,7 +116,7 @@
 				<!-- Increasing movements -->
 				<v-col>
 					<v-row no-gutters>
-						<v-col v-for="index in numMoveSteps" :key="index" :class="getMoveCellClass(numMoveSteps - index)">
+						<v-col v-for="index in numMoveSteps" :key="index" cols="6" md :class="getMoveCellClass(numMoveSteps - index)">
 							<code-btn :code="getMoveCode(axis, numMoveSteps - index, false)" :disabled="!canMove(axis)"
 									  no-wait @contextmenu.prevent="showMoveStepDialog(axis.letter, numMoveSteps - index)"
 									  block tile class="move-btn">
@@ -195,7 +195,7 @@ export default Vue.extend({
 				classes += "hidden-lg-and-down";
 			}
 			if (index === 1) {
-				classes += "hidden-md-and-down";
+				classes += "hidden-md-only";
 			}
 			return classes;
 		},
